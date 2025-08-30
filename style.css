@@ -1,0 +1,131 @@
+/* --- ESTILOS GERAIS E LAYOUT --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1d2b4b, #2c3e50);
+    color: #ecf0f1;
+}
+
+/* --- ÁREA PRINCIPAL --- */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-size: 2rem; /* Tamanho padrão para telas maiores */
+    word-wrap: break-word; /* Permite que o texto do título quebre a linha em palavras longas */
+    hyphens: auto; /* Adiciona hífens se necessário para melhorar a quebra de linha */
+}
+
+/* --- MEDIA QUERY PARA TELAS PEQUENAS (SMARTPHONES) --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Reduz o padding interno do container em telas menores */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Diminui o tamanho do título para caber melhor */
+        line-height: 1.2; /* Ajusta o espaçamento entre linhas se o título quebrar */
+    }
+
+    #clock {
+        font-size: 3rem; /* Diminui um pouco o tamanho do relógio */
+    }
+
+    label, #selected-timezone-label, #utc-offset {
+        font-size: 0.85rem; /* Ajusta o tamanho da fonte de outros textos */
+    }
+}
+
+/* --- ELEMENTOS DO FORMULÁRIO --- */
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #bdc3c7;
+}
+
+#timezone-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #7f8c8d;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+/* --- EXIBIÇÃO DO RELÓGIO --- */
+#time-display {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: block;
+}
+
+#selected-timezone-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    word-break: break-all;
+}
+
+#clock {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 10px 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+#utc-offset {
+    font-size: 1rem;
+    color: #95a5a6;
+}
+
+/* --- RODAPÉ --- */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1d2b4b;
+    color: #7f8c8d;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}

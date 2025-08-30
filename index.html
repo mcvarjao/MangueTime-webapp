@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MangueTime</title>
+
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>Consultor de Fusos Horários</h1>
+            <label for="timezone-select">Selecione um fuso horário:</label>
+            <select id="timezone-select">
+                <option value="">Carregando fusos horários...</option>
+            </select>
+            <div id="time-display">
+                <p id="selected-timezone-label">Nome do Fuso Horário</p>
+                <div id="clock">00:00:00</div>
+                <p id="utc-offset">UTC offset</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        Desenvolvido por Maria Clara Varjão | MangueTime &copy; <span id="current-year"></span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
