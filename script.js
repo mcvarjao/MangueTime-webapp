@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Função principal que inicializa a aplicação.
-     * Busca a lista de fusos, detecta o fuso do usuário via IP e inicia o relógio.
+     * Busca a lista de fusos horários, detecta o fuso do navegador e inicia o relógio.
      */
     async function initialize() {
         try {
@@ -28,10 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 timezoneSelect.appendChild(option);
             });
 
-            // Detecta o fuso horário do usuário e define como padrão
-            const userTimezoneResponse = await fetch(`${API_BASE_URL}/ip`);
-            const userData = await userTimezoneResponse.json();
-            timezoneSelect.value = userData.timezone;
+            // 🚀 Alteração: detectar o fuso horário local do navegador
+            const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            timezoneSelect.value = userTimezone;
 
             // Inicia o relógio com o fuso horário detectado
             await handleTimezoneChange();
